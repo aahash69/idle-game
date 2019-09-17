@@ -3,7 +3,7 @@ var score = 100;
 var title = new HTMLElement('h1', 'Welcome to the Game');
 var button = new Button('hello');
 var buttonWorld = new Button('world');
-var columns = new Columns(2);
+var columns = new Columns(20);
 
 button.style('50px', 'padding');
 button.edit('btn btn-danger', 'className');
