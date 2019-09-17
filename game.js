@@ -1,15 +1,25 @@
 var score = 100;
 
-postToPage(score); // Print to the page
+var title = new HTMLElement('h1', 'Welcome to the Game');
+var button = new Button('hello');
+var buttonWorld = new Button('world');
+var columns = new Columns(2);
 
-createButton('Game', btnPress); // Make a button
-changeTitle('Clicker Game');
+button.style('50px', 'padding');
+button.edit('btn btn-danger', 'className');
 
-setInterval(btnPress, 1000);
+columns.addToColumn(1, buttonWorld);
+columns.addToColumn(2, button);
 
-function btnPress() {
+setInterval(update, 5);
+setInterval(increment, 1000);
+
+function update() {
+  button.edit(score);
+}
+
+function increment() {
   score++;
-  postToPage(score);
 }
 
 createButton('Game', btnPress); // Make a button
