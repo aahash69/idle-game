@@ -1,17 +1,25 @@
 var score = 100;
 
 var title = new HTMLElement('h1', 'Welcome to the Game');
-title.add();
-var button = new Button('hello', btnPress);
-button.add();
-var scr = new HTMLElement('p', score);
-scr.add();
+var button = new Button('hello');
+var buttonWorld = new Button('world');
+var columns = new Columns(20);
 
-setInterval(btnPress, 1000);
+button.style('50px', 'padding');
+button.edit('btn btn-danger', 'className');
 
-function btnPress() {
+columns.addToColumn(1, buttonWorld);
+columns.addToColumn(2, button);
+
+setInterval(update, 5);
+setInterval(increment, 1000);
+
+function update() {
+  button.edit(score);
+}
+
+function increment() {
   score++;
-  scr.edit(score);
 }
 
 createButton('Game', btnPress); // Make a button
