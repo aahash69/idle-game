@@ -6,7 +6,6 @@ var hidden = new Button('Boo!');
 hidden.hide();
 var scr = new Text(score);                    // Create a text element
 
-setInterval(btnPress, 1000);   // Set up a loop
 
 function btnPress() {
   score++;         // Increase the score
